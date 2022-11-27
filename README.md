@@ -17,3 +17,5 @@ Pequeño proyecto E-commerce simulando una tienda en el universo de Harry Potter
 ### Visitalo!
 
 https://hogsmazon.vercel.app/
+
+![HogsmazonGif](./src/imagenes/hogsmazon.gif)
