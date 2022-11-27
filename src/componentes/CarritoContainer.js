@@ -73,13 +73,23 @@ const Carrito = () => {
         <form onSubmit={handleSubmit}>
           <div>
             <h1 className="font-semibold">Please enter your full name</h1>
-            <input type="text" onChange={handleName} value={nombre} />
+            <input
+              className="bg-secundario"
+              type="text"
+              onChange={handleName}
+              value={nombre}
+            />
           </div>
           <div>
             <h1 className="font-semibold">An a contact number</h1>
-            <input type="text" onChange={handlePhone} value={phone} />
+            <input
+              className="bg-secundario"
+              type="text"
+              onChange={handlePhone}
+              value={phone}
+            />
           </div>
-          <button className="bg-detalle4 px-3 py-1 rounded-full hover:bg-detalle text-princ mb-2">
+          <button className="bg-detalle4 px-3 py-1 rounded-full hover:bg-detalle text-princ my-2">
             Submit
           </button>
         </form>
