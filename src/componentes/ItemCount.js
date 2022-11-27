@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-const ItemCount = ({ handleOnAdd }) => {
-  const [count, setCount] = useState(0);
+const ItemCount = ({ handleOnAdd, confirmar, handleClick, init }) => {
+  const [count, setCount] = useState(init);
 
   const sumar = () => {
     setCount(count + 1);
@@ -9,7 +9,7 @@ const ItemCount = ({ handleOnAdd }) => {
   const restar = () => {
     setCount(count - 1);
   };
-  const confirmar = () => {
+  const confirm = () => {
     handleOnAdd(count);
   };
 
@@ -34,13 +34,25 @@ const ItemCount = ({ handleOnAdd }) => {
           ></img>
         </button>
       </div>
-      <div>
-        <button
-          className="bg-detalle4 px-2 py-1 rounded-full hover:bg-detalle text-princ mb-2"
-          onClick={confirmar}
-        >
-          Add to Cauldron
-        </button>
+      <div className="flex h-full w-full">
+        <div className="flex w-full justify-center relative">
+          <button
+            className="bg-detalle4 px-3 py-1 rounded-full hover:bg-detalle text-princ mb-2"
+            onClick={confirm}
+          >
+            Accio!
+          </button>
+        </div>
+        <div className="absolute ml-2">
+          {confirmar && (
+            <button
+              className=" w-36 bg-detalle4 px-2 py-1 rounded-full hover:bg-detalle text-princ mb-2"
+              onClick={handleClick}
+            >
+              Add to Cauldron
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );

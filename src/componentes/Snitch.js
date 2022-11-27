@@ -2,7 +2,7 @@ import React from "react";
 
 const Snitch = () => {
   return (
-    <div className="p-0 m-0 pt-60 pb-40 h-full w-full">
+    <div className="p-0 m-0 pt-60 pb-40 h-full w-full flex justify-center">
       <div className="snitch">
         <div className="obj">
           <div className="body">

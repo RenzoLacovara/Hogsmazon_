@@ -1,18 +1,25 @@
-import React, { useEffect, useState, useContext } from "react";
-import { contexto } from "./CustomProvider";
+import React, { useEffect, useState } from "react";
+import { useCarrito } from "./CustomProvider";
 import ItemCount from "./ItemCount";
 import Snitch from "./Snitch";
 import { Link } from "react-router-dom";
 
 const ItemDetail = ({ detalle }) => {
-  const contextValue = useContext(contexto);
+  const { agregarProducto } = useCarrito();
 
   const [detalles, setDetalles] = useState({});
   useEffect(() => {
     setDetalles(detalle);
   }, [detalle]);
-
-  const handleOnAdd = (cantidad) => {};
+  const [total, setTotal] = useState(0);
+  const [confirmar, setConfirmar] = useState(false);
+  const handleOnAdd = (cantidad) => {
+    setConfirmar(true);
+    setTotal(cantidad);
+  };
+  const handleClick = () => {
+    agregarProducto(detalle, total);
+  };
 
   let ofe = detalles.precio - detalles.precio * detalles.descuento;
   return detalles.nombre === undefined ? (
@@ -67,7 +74,12 @@ const ItemDetail = ({ detalle }) => {
             )}
           </div>
           <div>
-            <ItemCount handleOnAdd={handleOnAdd} />
+            <ItemCount
+              handleOnAdd={handleOnAdd}
+              confirmar={confirmar}
+              handleClick={handleClick}
+              init={total}
+            />
           </div>
         </div>
       </div>

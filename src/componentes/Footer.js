@@ -4,8 +4,8 @@ import Redes from "./Redes";
 
 const Footer = () => {
   return (
-    <footer class="flex justify-between footer p-10 bg-secundario text-base-content w-full h-72">
-      <div className="w-3/5">
+    <footer class="flex flex-wrap justify-center md:justify-between bg-secundario text-base-content w-full h-96 text-center sm:text-left md:h-80">
+      <div className="px-3 pt-10 md:p-10">
         <p>
           <span className="font-bold">Hogsmazon</span> © 2022 - All right
           reserved
@@ -15,8 +15,8 @@ const Footer = () => {
           </span>
         </p>
       </div>
-      <div className="flex w-2/5 gap-20 justify-evenly">
-        <div className="flex flex-col">
+      <div className="flex flex-wrap justify-evenly bg-secundario px-3 pt-10">
+        <div className="flex flex-col w-2/4">
           <span class="font-bold text-xl">Products</span>
           <Link to="/Products/" className="text-lg hover:text-detalle">
             All Products
@@ -28,7 +28,7 @@ const Footer = () => {
             Your Cauldron
           </Link>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col w-2/4">
           <span className="font-bold text-xl">Shops</span>
           <Link
             to="/Products/Shops/Ollivanders"
@@ -66,10 +66,6 @@ const Footer = () => {
           >
             Weasleys' Wizard Wheezes
           </Link>
-        </div>
-        <div className="flex flex-col">
-          <span class="font-bold text-xl">Contact</span>
-          <Redes />
         </div>
       </div>
     </footer>

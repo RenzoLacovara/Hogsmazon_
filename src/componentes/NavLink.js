@@ -11,7 +11,7 @@ const NavLinks = () => {
         Products
       </NavLink>
       <NavLink to="Products/OnSale" className="hover:text-detalle">
-        On Sale
+        OnSale
       </NavLink>
     </div>
   );
