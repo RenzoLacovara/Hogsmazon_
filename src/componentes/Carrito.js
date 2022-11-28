@@ -1,8 +1,11 @@
 import React from "react";
-
+import ItemCount from "./ItemCount";
 const Carrito = (productos) => {
   return (
-    <div className="text-center shadow-lg flex w-2/4 h-40 justify-evenly items-center m-auto bg-secundario rounded-xl my-5">
+    <div
+      v-for="item in items"
+      className="text-center flex w-full h-40 justify-evenly items-center m-auto py-5 odd:bg-secundario"
+    >
       <img
         className=" w-1/3 h-full object-contain hover:animate-wiggle"
         src={productos.imagen}

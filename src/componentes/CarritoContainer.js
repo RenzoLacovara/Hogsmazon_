@@ -48,14 +48,14 @@ const Carrito = () => {
 
   return cart.cantidad === 0 ? (
     <div>
-      <div className="p-4 text-xl flex flex-col justify-center mt-3">
+      <div className="p-4 text-xl flex flex-col justify-center mt-3 text-center">
         <Snitch />
         <h1 className="w-full">
-          You don't have products yet{" "}
-          <Link to="/Products" className="font-semibold hover:text-detalle">
-            check out some!
-          </Link>
+          You don't have any products in your cauldron yet
         </h1>
+        <Link to="/Products" className="font-semibold hover:text-detalle">
+          check out some!
+        </Link>
       </div>
     </div>
   ) : (
@@ -67,12 +67,24 @@ const Carrito = () => {
           <h1 className="text-right mx-7 font-semibold text-xl">
             Total: <span className=" font-normal">${cart.precioTotal}</span>
           </h1>
+          <div className="flex flex-col w-full items-end">
+            <h2 className="mx-7">0% interest with</h2>
+            <img
+              src="../../imagenes/gringotts2.png"
+              alt="gringots"
+              className="w-16 h-auto mx-7"
+            ></img>
+          </div>
         </div>
       </div>
       <div className="w-2/4 m-auto text-center my-20">
         <form onSubmit={handleSubmit}>
+          <h1 className="my-4">
+            To finalize your purchase order, please enter the following
+            information
+          </h1>
           <div>
-            <h1 className="font-semibold">Please enter your full name</h1>
+            <h1 className="font-semibold">Enter your full name</h1>
             <input
               className="bg-secundario"
               type="text"
