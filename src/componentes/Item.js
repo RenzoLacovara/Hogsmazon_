@@ -6,7 +6,7 @@ const Item = ({ nombre, imagen, precio, tienda, id, oferta, descuento }) => {
   return (
     <Link
       to={"/Item/" + id}
-      className="transform hover:-translate-y-4 duration-150"
+      className="transform hover:-translate-y-4 duration-150 flex justify-center"
     >
       <article className="overflow-hidden my-8 w-80 rounded-2xl shadow-lg h-96 flex flex-col items-center justify-between">
         <div className="w-full">

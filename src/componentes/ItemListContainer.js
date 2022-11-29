@@ -6,7 +6,7 @@ import { generarPromesa } from "./utils";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import Snitch from "./Snitch";
 
-const ItemListContainer = () => {
+const ItemListContainer = ({ destacado }) => {
   const [items, setItems] = useState([]);
   const { oferta, ssid } = useParams();
 
@@ -40,6 +40,20 @@ const ItemListContainer = () => {
         .catch((err) => {
           console.log(err);
         });
+    } else if (destacado) {
+      const filtro = query(coleccion, where("destacado", "==", destacado));
+      const consulta = getDocs(filtro);
+      generarPromesa(consulta)
+        .then((respuesta) => {
+          const productos = respuesta.docs.map((doc) => ({
+            ...doc.data(),
+            id: doc.id,
+          }));
+          setItems(productos);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     } else {
       const consulta = getDocs(coleccion);
       generarPromesa(consulta)
@@ -54,7 +68,7 @@ const ItemListContainer = () => {
           console.log(err);
         });
     }
-  }, [oferta, ssid]);
+  }, [oferta, ssid, destacado]);
 
   return (
     <div className="p-4 text-xl flex justify-center mt-3">

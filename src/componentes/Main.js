@@ -10,8 +10,8 @@ const Main = () => {
   return (
     <main className="flex h-full w-full grow justify-center items-start">
       <Routes>
-        <Route path="/Home" element={<Home />} />
-        <Route path="/" element={<ItemListContainer />} />
+        <Route path="/:Home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/Products" element={<ItemListContainer />} />
         <Route path="/Products/:oferta" element={<ItemListContainer />} />
         <Route path="/Item/:id" element={<ItemDetailContainer />} />
@@ -20,7 +20,7 @@ const Main = () => {
         <Route path="/Cart" element={<CarritoContainer />} />
         <Route
           path="*"
-          element={<h1 className="h-screen">Ups, algo salió mal</h1>}
+          element={<h1 className="h-screen">Oops, something went wrong</h1>}
         />
       </Routes>
     </main>
