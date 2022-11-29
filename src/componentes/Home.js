@@ -20,7 +20,7 @@ const Home = () => {
           <h3 className="main__inicio__subtitulo">Just one click away</h3>
           <p className="main__inicio__p">
             At hosmazon we seek to bring that gift you are looking for to your
-            door, obviously by owl
+            door, obviously by our fastest owls
           </p>
         </div>
       </div>
