@@ -28,7 +28,13 @@ const TiendaContainer = () => {
 
   return (
     <div className="p-4 text-xl flex justify-center mt-3">
-      {tiendas.length === 0 ? <Snitch /> : <TiendasList tiendas={tiendas} />}
+      {tiendas.length === 0 ? (
+        <div>
+          <h1 className="text-2xl">Accio shops!</h1> <Snitch />
+        </div>
+      ) : (
+        <TiendasList tiendas={tiendas} />
+      )}
     </div>
   );
 };

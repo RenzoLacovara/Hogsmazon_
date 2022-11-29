@@ -43,7 +43,7 @@ const ItemListContainer = ({ destacado }) => {
     } else if (destacado) {
       const filtro = query(coleccion, where("destacado", "==", destacado));
       const consulta = getDocs(filtro);
-      generarPromesa(consulta)
+      consulta
         .then((respuesta) => {
           const productos = respuesta.docs.map((doc) => ({
             ...doc.data(),
@@ -72,7 +72,13 @@ const ItemListContainer = ({ destacado }) => {
 
   return (
     <div className="p-4 text-xl flex justify-center mt-3">
-      {items.length === 0 ? <Snitch /> : <ItemList items={items} />}
+      {items.length === 0 ? (
+        <div>
+          <h1 className="text-2xl">Accio products!</h1> <Snitch />
+        </div>
+      ) : (
+        <ItemList items={items} />
+      )}
     </div>
   );
 };
