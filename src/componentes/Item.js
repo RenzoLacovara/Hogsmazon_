@@ -10,9 +10,9 @@ const Item = ({ nombre, imagen, precio, tienda, id, oferta, descuento }) => {
     >
       <article className="overflow-hidden my-8 w-80 rounded-2xl shadow-lg h-96 flex flex-col items-center justify-between">
         <div className="w-full">
-          <div className="w-full">
+          <div className="w-full bg-mapa">
             <img
-              className="rounded-tr-2xl rounded-tl-2xl h-60 w-full object-contain bg-mapa"
+              className="rounded-tr-2xl rounded-tl-2xl h-60 w-full object-contain"
               src={imagen}
               alt={nombre}
             />

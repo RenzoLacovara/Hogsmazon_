@@ -15106,7 +15106,7 @@ video {
 }
 
 .bg-mapa {
-  background-image: url('../public/imagenes/mapa.png');
+  background-image: url('../public/imagenes/mapa.jpg');
 }
 
 .bg-circle {
@@ -35335,7 +35335,7 @@ video {
   }
 
   .sm\:bg-mapa {
-    background-image: url('../public/imagenes/mapa.png');
+    background-image: url('../public/imagenes/mapa.jpg');
   }
 
   .sm\:bg-circle {
@@ -55514,7 +55514,7 @@ video {
   }
 
   .md\:bg-mapa {
-    background-image: url('../public/imagenes/mapa.png');
+    background-image: url('../public/imagenes/mapa.jpg');
   }
 
   .md\:bg-circle {
@@ -75693,7 +75693,7 @@ video {
   }
 
   .lg\:bg-mapa {
-    background-image: url('../public/imagenes/mapa.png');
+    background-image: url('../public/imagenes/mapa.jpg');
   }
 
   .lg\:bg-circle {
@@ -95872,7 +95872,7 @@ video {
   }
 
   .xl\:bg-mapa {
-    background-image: url('../public/imagenes/mapa.png');
+    background-image: url('../public/imagenes/mapa.jpg');
   }
 
   .xl\:bg-circle {
@@ -116051,7 +116051,7 @@ video {
   }
 
   .\32xl\:bg-mapa {
-    background-image: url('../public/imagenes/mapa.png');
+    background-image: url('../public/imagenes/mapa.jpg');
   }
 
   .\32xl\:bg-circle {
