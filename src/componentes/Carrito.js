@@ -1,27 +1,31 @@
 import React from "react";
-import ItemCount from "./ItemCount";
+
 const Carrito = (productos) => {
   return (
     <div
       v-for="item in items"
-      className="text-center flex w-full h-40 justify-evenly items-center m-auto py-5 odd:bg-secundario"
+      className="text-center flex flex-row w-full h-48 sm:h-40 justify-evenly items-center m-auto p-5 odd:bg-secundario"
     >
       <img
-        className=" w-1/3 h-full object-contain hover:animate-wiggle"
+        className="w-2/4 sm:w-1/4 h-full object-contain hover:animate-wiggle"
         src={productos.imagen}
         alt="producto"
       />
-      <div className="w-1/3">
+      <div className="w-2/4 sm:w-3/4 flex flex-col sm:flex-row">
+
+      <div className="sm:w-1/3">
         <h1 className=" font-semibold">Product</h1>
         <h1>{productos.nombre}</h1>
       </div>
-      <div className="w-1/3">
+      <div className="sm:w-1/3">
         <h1 className=" font-semibold">Price</h1>
-        <h1>{productos.precio}</h1>
+        <h1>${productos.precio}</h1>
       </div>
-      <div className="w-1/3">
+      <div className="sm:w-1/3">
         <h1 className=" font-semibold">Quantity</h1>
-        <h1>{productos.cantidad}</h1>
+        <h1>{productos.cantidad}u</h1>
+      </div>
+
       </div>
     </div>
   );

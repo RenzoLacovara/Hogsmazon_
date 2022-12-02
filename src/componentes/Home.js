@@ -13,7 +13,7 @@ const Home = () => {
           src="../../imagenes/hogs.mp4"
           type="video/mp4"
           title="hogsmazon"
-          className="mt-40"
+          className="vid"
         ></video>
         <div className="container__overlay"></div>
         <div className="main__inicio">
@@ -26,10 +26,10 @@ const Home = () => {
         </div>
       </div>
       <div className="w-full flex flex-col justify-center my-16 items-center ">
-        <h1 className=" text-3xl text-center w-full mt-64 mb-7">
+        <h1 className=" text-3xl text-center w-full lg:mt-64 mb-7">
           Best-sellers of the Week!
         </h1>
-        <div className="absolute z-10 mb-72">
+        <div className="lg:absolute z-10 lg:mb-72">
           <ItemListContainer destacado={true} />
         </div>
         <button className=" w-36 bg-detalle4 px-3 py-2 rounded-full hover:bg-detalle text-princ mb-2">

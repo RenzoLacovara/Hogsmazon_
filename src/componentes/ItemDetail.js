@@ -27,17 +27,17 @@ const ItemDetail = ({ detalle }) => {
       <Snitch />
     </div>
   ) : (
-    <div className="h-96 my-14 w-screen flex justify-center items-center">
-      <div className="rounded-2xl shadow-lg overflow-hidden flex w-2/3 h-full">
-        <div className="bg-mapa w-2/5">
+    <div className="lg:h-96 h-128 my-14 w-screen flex justify-center items-center">
+      <div className="rounded-2xl shadow-lg overflow-hidden lg:flex lg:w-2/3 sm:w-96 h-full w-5/6">
+        <div className="bg-mapa lg:w-2/5 h-1/3 lg:h-full">
           <img
-            className="h-96 w-full object-contain bg-cover overflow-hidden hover:animate-wiggle"
+            className="h-full w-full object-contain bg-cover overflow-hidden hover:animate-wiggle"
             src={detalles.imagen}
             alt={detalles.nombre}
           />
         </div>
 
-        <div className=" w-3/5 h-full flex flex-col justify-between">
+        <div className=" lg:w-3/5 h-2/3 lg:h-full flex flex-col justify-between">
           <div className="text-center h-5/6">
             <h2 className="text-2xl">{detalles.nombre}</h2>
             <h3 className="font-light">

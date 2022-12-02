@@ -20,12 +20,13 @@
   overflow: hidden;
 }
 
-video {
+.vid {
   object-fit: cover;
   width: 100%;
-  height: 480px;
+  height: 570px;
   position: absolute;
   z-index: 1;
+  overflow: hidden;
 }
 
 .container__overlay {
@@ -72,17 +73,37 @@ video {
   line-height: 1.4;
 }
 
-.tienda_name div h1 {
-  opacity: 0;
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -o-transition: 0.5s;
+@media only screen and (max-width: 600px) {
+  .main__inicio {
+    padding: 0px 10%;
+  }
+
+  .main__inicio__titulo {
+    font-size: 35px;
+  }
+
+  .main__inicio__subtitulo {
+    font-size: 20px;
+  }
+
+  .main__inicio__p {
+    font-size: 15px;
+  }
 }
 
-.tienda_name:hover div h1 {
-  opacity: 100;
+@media (min-width: 1024px) {
+  .tienda_name div h1 {
+    opacity: 0;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+  }
+
+  .tienda_name:hover div h1 {
+    opacity: 100;
+  }
 }
 
 .caldero {
@@ -6683,6 +6704,10 @@ video {
 
 .h-96 {
   height: 24rem;
+}
+
+.h-128 {
+  height: 40rem;
 }
 
 .h-auto {
@@ -27036,6 +27061,10 @@ video {
     height: 24rem;
   }
 
+  .sm\:h-128 {
+    height: 40rem;
+  }
+
   .sm\:h-auto {
     height: auto;
   }
@@ -47213,6 +47242,10 @@ video {
 
   .md\:h-96 {
     height: 24rem;
+  }
+
+  .md\:h-128 {
+    height: 40rem;
   }
 
   .md\:h-auto {
@@ -67394,6 +67427,10 @@ video {
     height: 24rem;
   }
 
+  .lg\:h-128 {
+    height: 40rem;
+  }
+
   .lg\:h-auto {
     height: auto;
   }
@@ -87573,6 +87610,10 @@ video {
     height: 24rem;
   }
 
+  .xl\:h-128 {
+    height: 40rem;
+  }
+
   .xl\:h-auto {
     height: auto;
   }
@@ -107750,6 +107791,10 @@ video {
 
   .\32xl\:h-96 {
     height: 24rem;
+  }
+
+  .\32xl\:h-128 {
+    height: 40rem;
   }
 
   .\32xl\:h-auto {
