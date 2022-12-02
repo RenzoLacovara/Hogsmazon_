@@ -63,7 +63,7 @@ const Carrito = () => {
       <CarritoList cart={cart} />
       <div>
         <section className="w-full"></section>
-        <div className="w-2/4 m-auto">
+        <div className="w-5/6 sm:w-3/4 lg:w-2/4 m-auto">
           <h1 className="text-right mx-7 font-semibold text-xl">
             Total: <span className=" font-normal">${cart.precioTotal}</span>
           </h1>
