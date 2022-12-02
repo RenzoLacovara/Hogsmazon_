@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Redes from "./Redes";
 
 const Footer = () => {
   return (
@@ -15,7 +14,7 @@ const Footer = () => {
           </span>
         </p>
       </div>
-      <div className="flex flex-wrap justify-evenly bg-secundario px-3 pt-10">
+      <div className="flex flex-wrap justify-evenly bg-secundario px-3 sm:pt-10">
         <div className="flex flex-col w-2/4">
           <span class="font-bold text-xl">Products</span>
           <Link to="/Products/" className="text-lg hover:text-detalle">

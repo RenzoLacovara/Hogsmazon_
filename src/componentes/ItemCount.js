@@ -36,15 +36,14 @@ const ItemCount = ({ handleOnAdd, confirmar, handleClick, init }) => {
       </div>
       <div className="flex h-full w-full">
         <div className="flex w-full justify-center relative">
-          <button
-            className="bg-detalle4 px-3 py-1 rounded-full hover:bg-detalle text-princ mb-2"
-            onClick={confirm}
-          >
-            Accio!
-          </button>
-        </div>
-        <div className="absolute ml-2">
-          {confirmar && (
+          {confirmar === false || count !== init ? (
+            <button
+              className="bg-detalle4 px-3 py-1 rounded-full hover:bg-detalle text-princ mb-2"
+              onClick={confirm}
+            >
+              Accio!
+            </button>
+          ) : (
             <button
               className=" w-36 bg-detalle4 px-2 py-1 rounded-full hover:bg-detalle text-princ mb-2"
               onClick={handleClick}
