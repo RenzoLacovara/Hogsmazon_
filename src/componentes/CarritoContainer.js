@@ -96,12 +96,12 @@ const Carrito = () => {
             <h1 className="font-semibold">An a contact number</h1>
             <input
               className="bg-secundario"
-              type="text"
+              type="number"
               onChange={handlePhone}
               value={phone}
             />
           </div>
-          <button className="bg-detalle4 px-3 py-1 rounded-full hover:bg-detalle text-princ my-2">
+          <button className="bg-detalle4 px-3 py-1 rounded-full md:hover:bg-detalle focus:bg-detalle text-princ my-2">
             Submit
           </button>
         </form>
