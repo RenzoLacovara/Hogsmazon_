@@ -4,7 +4,7 @@
 
 Pequeño proyecto E-commerce simulando una tienda en el universo de Harry Potter, con productos divididos por tiendas famosas de la saga, utilizacion Firebase de base de datos para poder acceder a ellos, realizado como proyecto para el Curso de React de CoderHouse.
 
-![Hogsmazon](./public/imagenes/hogsmazon.png)
+![hogsmazon](https://user-images.githubusercontent.com/111152760/205387300-f26160a7-f6dd-4837-83a2-2b3c4c877082.png)
 
 ## Herramientas utilizadas
 
