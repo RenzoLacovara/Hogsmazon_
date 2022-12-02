@@ -8,7 +8,7 @@ function Header(prop) {
   let nombre2 = prop.nombre2;
   return (
     <header className="bg-secundario h-28 w-full flex">
-      <nav className="h-full w-full flex flex-col sm:flex-row sm:justify-between justify-center items-center p-3">
+      <nav className="overflow-hidden h-full w-full flex flex-col sm:flex-row sm:justify-between justify-center items-center p-3">
         <div>
           <Link to="/Home" className="mx-4 h-full w-full flex items-center ">
             <div className="hidden sm:inline-block text-3xl pt-2">

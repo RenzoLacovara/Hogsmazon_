@@ -39,7 +39,7 @@ const ItemDetail = ({ detalle }) => {
 
         <div className=" lg:w-3/5 h-2/3 lg:h-full flex flex-col justify-between">
           <div className="text-center h-5/6">
-            <h2 className="text-2xl">{detalles.nombre}</h2>
+            <h2 className="text-xl sm:text-2xl">{detalles.nombre}</h2>
             <h3 className="font-light">
               by{" "}
               <Link
@@ -52,7 +52,7 @@ const ItemDetail = ({ detalle }) => {
 
             <p className="text-justify p-6 text-sm">{detalles.descripcion}</p>
           </div>
-          <div className="flex h-1/6 justify-center items-center mb-2 border-t-2 mx-16 border-secundario">
+          <div className="flex h-1/6 justify-center items-center mb-1 border-t-2 mx-16 border-secundario">
             <h3
               className={` inline-block ${
                 detalles.oferta === true
@@ -73,7 +73,7 @@ const ItemDetail = ({ detalle }) => {
               </>
             )}
           </div>
-          <div>
+          <div className="mb-2">
             <ItemCount
               handleOnAdd={handleOnAdd}
               confirmar={confirmar}
