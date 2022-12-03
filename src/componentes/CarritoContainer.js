@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
 const Carrito = () => {
   const contextValue = useCarrito();
   const [cart, setCart] = useState(contextValue);
-
   const [id, setId] = useState("");
   const [nombre, setNombre] = useState("");
   const [phone, setPhone] = useState("");
@@ -67,6 +66,7 @@ const Carrito = () => {
           <h1 className="text-right mx-7 font-semibold text-xl">
             Total: <span className=" font-normal">${cart.precioTotal}</span>
           </h1>
+
           <div className="flex flex-col w-full items-end">
             <h2 className="mx-7">0% interest with</h2>
             <img

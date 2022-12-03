@@ -16,7 +16,6 @@ const CustomProvider = ({ children }) => {
   };
   const agregarProducto = (producto, cantidad) => {
     if (isInCart.inCart) {
-      
     } else {
       setCart([...cart, { ...producto, cantidad }]);
       setPrecioTotal(precioTotal + producto.precio * cantidad);

@@ -32,7 +32,7 @@ const Home = () => {
         <div className="lg:absolute z-10 lg:mb-72">
           <ItemListContainer destacado={true} />
         </div>
-        <button className=" w-36 bg-detalle4 px-3 py-2 rounded-full hover:bg-detalle text-princ mb-2">
+        <button className=" w-36 bg-detalle4 px-3 py-2 rounded-full hover:bg-detalle text-princ sm:mb-2 mt-8 sm:mt-0">
           <Link to="/Products">More Products!</Link>
         </button>
       </div>

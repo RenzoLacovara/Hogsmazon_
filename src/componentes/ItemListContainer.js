@@ -43,7 +43,7 @@ const ItemListContainer = ({ destacado }) => {
     } else if (destacado) {
       const filtro = query(coleccion, where("destacado", "==", destacado));
       const consulta = getDocs(filtro);
-      consulta
+      generarPromesa(consulta)
         .then((respuesta) => {
           const productos = respuesta.docs.map((doc) => ({
             ...doc.data(),

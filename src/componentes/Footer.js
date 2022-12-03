@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+let fecha = new Date().getFullYear();
+
 const Footer = () => {
   return (
     <footer class="flex flex-wrap justify-center md:justify-between bg-secundario text-base-content w-full h-96 text-center sm:text-left md:h-80">
       <div className="px-3 pt-10 md:p-10">
         <p>
-          <span className="font-bold">Hogsmazon</span> © 2022 - All right
+          <span className="font-bold">Hogsmazon</span> © {fecha} - All rights
           reserved
           <br />
           <span className=" italic">

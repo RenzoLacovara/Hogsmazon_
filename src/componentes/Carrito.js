@@ -12,20 +12,18 @@ const Carrito = (productos) => {
         alt="producto"
       />
       <div className="w-2/4 sm:w-3/4 flex flex-col sm:flex-row">
-
-      <div className="sm:w-1/3">
-        <h1 className=" font-semibold">Product</h1>
-        <h1>{productos.nombre}</h1>
-      </div>
-      <div className="sm:w-1/3">
-        <h1 className=" font-semibold">Price</h1>
-        <h1>${productos.precio}</h1>
-      </div>
-      <div className="sm:w-1/3">
-        <h1 className=" font-semibold">Quantity</h1>
-        <h1>{productos.cantidad}u</h1>
-      </div>
-
+        <div className="sm:w-1/3">
+          <h1 className=" font-semibold">Product</h1>
+          <h1>{productos.nombre}</h1>
+        </div>
+        <div className="sm:w-1/3">
+          <h1 className=" font-semibold">Price</h1>
+          <h1>${productos.precio}</h1>
+        </div>
+        <div className="sm:w-1/3">
+          <h1 className=" font-semibold">Quantity</h1>
+          <h1>{productos.cantidad}u</h1>
+        </div>
       </div>
     </div>
   );
