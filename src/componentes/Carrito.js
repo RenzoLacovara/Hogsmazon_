@@ -2,10 +2,7 @@ import React from "react";
 
 const Carrito = (productos) => {
   return (
-    <div
-      v-for="item in items"
-      className="text-center flex flex-row w-full h-48 sm:h-40 justify-evenly items-center m-auto p-5 odd:bg-secundario"
-    >
+    <div className="text-center flex flex-row w-full h-48 sm:h-40 justify-evenly items-center m-auto p-5 odd:bg-secundario">
       <img
         className="w-2/4 sm:w-1/4 h-full object-contain hover:animate-wiggle"
         src={productos.imagen}
