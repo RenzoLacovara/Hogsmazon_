@@ -15134,8 +15134,12 @@ video {
   background-image: url('../public/imagenes/mapa.jpg');
 }
 
+.bg-mapa2 {
+  background-image: url('../public/imagenes/mapa2.png');
+}
+
 .bg-circle {
-  background-image: url('../public/imagenes/pokemon.svg');
+  background-image: url('../public/imagenes/circle.png');
 }
 
 .from-princ {
@@ -35367,8 +35371,12 @@ video {
     background-image: url('../public/imagenes/mapa.jpg');
   }
 
+  .sm\:bg-mapa2 {
+    background-image: url('../public/imagenes/mapa2.png');
+  }
+
   .sm\:bg-circle {
-    background-image: url('../public/imagenes/pokemon.svg');
+    background-image: url('../public/imagenes/circle.png');
   }
 
   .sm\:from-princ {
@@ -55550,8 +55558,12 @@ video {
     background-image: url('../public/imagenes/mapa.jpg');
   }
 
+  .md\:bg-mapa2 {
+    background-image: url('../public/imagenes/mapa2.png');
+  }
+
   .md\:bg-circle {
-    background-image: url('../public/imagenes/pokemon.svg');
+    background-image: url('../public/imagenes/circle.png');
   }
 
   .md\:from-princ {
@@ -75733,8 +75745,12 @@ video {
     background-image: url('../public/imagenes/mapa.jpg');
   }
 
+  .lg\:bg-mapa2 {
+    background-image: url('../public/imagenes/mapa2.png');
+  }
+
   .lg\:bg-circle {
-    background-image: url('../public/imagenes/pokemon.svg');
+    background-image: url('../public/imagenes/circle.png');
   }
 
   .lg\:from-princ {
@@ -95916,8 +95932,12 @@ video {
     background-image: url('../public/imagenes/mapa.jpg');
   }
 
+  .xl\:bg-mapa2 {
+    background-image: url('../public/imagenes/mapa2.png');
+  }
+
   .xl\:bg-circle {
-    background-image: url('../public/imagenes/pokemon.svg');
+    background-image: url('../public/imagenes/circle.png');
   }
 
   .xl\:from-princ {
@@ -116099,8 +116119,12 @@ video {
     background-image: url('../public/imagenes/mapa.jpg');
   }
 
+  .\32xl\:bg-mapa2 {
+    background-image: url('../public/imagenes/mapa2.png');
+  }
+
   .\32xl\:bg-circle {
-    background-image: url('../public/imagenes/pokemon.svg');
+    background-image: url('../public/imagenes/circle.png');
   }
 
   .\32xl\:from-princ {

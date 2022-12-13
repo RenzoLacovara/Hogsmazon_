@@ -22,9 +22,9 @@ const ItemDetailContainer = () => {
   }, [id]);
 
   return (
-    <div>
+    <>
       <ItemDetail detalle={detalle} />
-    </div>
+    </>
   );
 };
 

@@ -27,11 +27,11 @@ const ItemDetail = ({ detalle }) => {
       <Snitch />
     </div>
   ) : (
-    <div className="lg:h-96 h-128 my-14 w-screen flex justify-center items-center">
-      <div className="rounded-2xl shadow-lg overflow-hidden lg:flex lg:w-2/3 sm:w-96 h-full w-5/6">
-        <div className="bg-mapa lg:w-2/5 h-1/3 lg:h-full">
+    <div className="lg:h-96 h-128 sm:my-14 w-full flex justify-center items-center bg-mapa2 sm:bg-none py-10 sm:py-0 bg-cover">
+      <div className="sm:rounded-2xl sm:shadow-lg overflow-hidden lg:flex lg:w-2/3 w-96 h-full ">
+        <div className="sm:bg-mapa lg:w-2/5 h-1/3 lg:h-full bg-circle bg-contain bg-no-repeat bg-center sm:bg-cover">
           <img
-            className="h-full w-full object-contain bg-cover overflow-hidden hover:animate-wiggle"
+            className="h-full w-full object-contain bg-cover overflow-hidden hover:animate-wiggle sm:p-2 lg:p-8"
             src={detalles.imagen}
             alt={detalles.nombre}
           />
@@ -50,7 +50,9 @@ const ItemDetail = ({ detalle }) => {
               </Link>
             </h3>
 
-            <p className="text-justify p-6 text-sm">{detalles.descripcion}</p>
+            <p className="text-justify p-6 text-sm font-medium">
+              {detalles.descripcion}
+            </p>
           </div>
           <div className="flex h-1/6 justify-center items-center mb-1 border-t-2 mx-16 border-secundario">
             <h3

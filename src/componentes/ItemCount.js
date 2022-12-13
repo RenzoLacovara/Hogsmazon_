@@ -23,7 +23,7 @@ const ItemCount = ({ handleOnAdd, confirmar, handleClick, init }) => {
             alt="menos"
           ></img>
         </button>
-        <div className="flex justify-center items-center w-12 h-12 border-2 border-secundario">
+        <div className="bg-princ flex justify-center items-center w-12 h-12 border-2 border-secundario">
           <h2 className="py-1 px-2 w-7 text-center text-principald">{count}</h2>
         </div>
         <button onClick={sumar}>

@@ -25,7 +25,8 @@ module.exports = {
       },
       backgroundImage: {
         mapa: "url('../public/imagenes/mapa.jpg')",
-        circle: "url('../public/imagenes/pokemon.svg')",
+        mapa2: "url('../public/imagenes/mapa2.png')",
+        circle: "url('../public/imagenes/circle.png')",
       },
       keyframes: {
         wiggle: {
