@@ -31,7 +31,7 @@ const ItemDetail = ({ detalle }) => {
       <div className="sm:rounded-2xl sm:shadow-lg overflow-hidden lg:flex lg:w-2/3 w-96 h-full ">
         <div className="sm:bg-mapa lg:w-2/5 h-1/3 lg:h-full bg-circle bg-contain bg-no-repeat bg-center sm:bg-cover">
           <img
-            className="h-full w-full object-contain bg-cover overflow-hidden hover:animate-wiggle sm:p-2 lg:p-8"
+            className="h-full p-4 w-full object-contain bg-cover overflow-hidden hover:animate-wiggle sm:p-2 lg:p-8"
             src={detalles.imagen}
             alt={detalles.nombre}
           />
