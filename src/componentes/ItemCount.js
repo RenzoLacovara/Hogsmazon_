@@ -18,17 +18,17 @@ const ItemCount = ({ handleOnAdd, confirmar, handleClick, init }) => {
       <div className="flex">
         <button onClick={restar}>
           <img
-            className="w-16 h-10 hover:animate-point"
+            className="sm:w-16 sm:h-10 h-7 hover:animate-point"
             src="../imagenes/izquierda.png"
             alt="menos"
           ></img>
         </button>
-        <div className="bg-princ flex justify-center items-center w-12 h-12 border-2 border-secundario">
+        <div className="bg-princ flex justify-center items-center sm:w-12 sm:h-12 h-8 w-8 border-2 border-secundario">
           <h2 className="py-1 px-2 w-7 text-center text-principald">{count}</h2>
         </div>
         <button onClick={sumar}>
           <img
-            className="w-16 h-10 hover:animate-point"
+            className="sm:w-16 sm:h-10 h-7 hover:animate-point"
             src="../imagenes/derecha.png"
             alt="mas"
           ></img>
