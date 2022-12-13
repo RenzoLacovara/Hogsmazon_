@@ -5,6 +5,11 @@ import { contexto } from "./CustomProvider";
 const CartWidget = () => {
   const contextValue = useContext(contexto);
 
+  const totalCart = () => {
+    return contextValue.productos.reduce((cantidad, producto) => {
+      return cantidad + producto.cantidad;
+    }, 0);
+  };
   return (
     <Link to="/Cart">
       <div className="flex justify-center items-center sm:mx-4 text-detalle w-16 h-full text-center">
@@ -16,7 +21,7 @@ const CartWidget = () => {
           ></img>
         </div>
         <h2 className="text-center bg-secundariod py-2 pr-3 rounded-r-full">
-          {contextValue.cantidad}
+          {totalCart()}
         </h2>
       </div>
     </Link>

@@ -10,12 +10,12 @@ const CustomProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
   const [precioTotal, setPrecioTotal] = useState(0);
-  const vaciarCart = () => {
-    setCart([]);
-    setTotal(0);
-  };
+
   const agregarProducto = (producto, cantidad) => {
-    if (isInCart.inCart) {
+    if (isInCart(producto.id)) {
+      const indexItem = cart.findIndex((e) => e.id === producto.id);
+      cart[indexItem].cantidad = cart[indexItem].cantidad + cantidad;
+      setCart([...cart]);
     } else {
       setCart([...cart, { ...producto, cantidad }]);
       setPrecioTotal(precioTotal + producto.precio * cantidad);
@@ -23,7 +23,7 @@ const CustomProvider = ({ children }) => {
     }
   };
   const isInCart = (id) => {
-    return { inCart: false, item: {}, index: 0 };
+    return cart.some((i) => i.id === id);
   };
   const contextValue = {
     productos: cart,
@@ -31,7 +31,6 @@ const CustomProvider = ({ children }) => {
     precioTotal: precioTotal,
     setCart: setCart,
     setTotal: setTotal,
-    vaciarCart: vaciarCart,
     agregarProducto: agregarProducto,
   };
   return <Provider value={contextValue}>{children}</Provider>;

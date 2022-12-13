@@ -60,6 +60,7 @@ const Carrito = () => {
   ) : (
     <div className="w-full">
       <CarritoList cart={cart} />
+
       <div>
         <section className="w-full"></section>
         <div className="w-5/6 sm:w-3/4 lg:w-2/4 m-auto">
