@@ -29,7 +29,7 @@ const ItemDetail = ({ detalle }) => {
   ) : (
     <div className="lg:h-96 h-136 sm:h-128 sm:my-14 w-full flex justify-center items-center bg-mapa2 sm:bg-none py-10 sm:py-0 bg-cover">
       <div className="sm:rounded-2xl sm:shadow-lg overflow-hidden lg:flex lg:w-2/3 w-96 h-full ">
-        <div className="sm:bg-mapa lg:w-2/5 h-2/4 sm:h-2/5 lg:h-full bg-circle bg-contain bg-no-repeat bg-center sm:bg-cover m-4 sm:m-0">
+        <div className="sm:bg-mapa lg:w-2/5 h-2/4 sm:h-2/5 lg:h-full bg-circle bg-contain bg-no-repeat bg-center sm:bg-cover mx-4 sm:m-0">
           <img
             className="h-full p-10 w-full object-contain bg-cover overflow-hidden hover:animate-wiggle sm:p-2 lg:p-8 filter drop-shadow-lg"
             src={detalles.imagen}

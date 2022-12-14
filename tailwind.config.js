@@ -21,8 +21,10 @@ module.exports = {
 
     extend: {
       height: {
+        78: "19rem",
         128: "40rem",
         136: "50rem",
+        142: "55rem",
       },
       backgroundImage: {
         mapa: "url('../public/imagenes/mapa.jpg')",
