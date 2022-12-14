@@ -9,10 +9,9 @@
   --color-detalle4: #440c0c;
 }
 .hamburger {
-
   cursor: pointer;
-  width: 48px;
-  height: 48px;
+  width: 46px;
+  height: 36px;
   transition: all 0.25s;
   -webkit-transition: all 0.25s;
   -moz-transition: all 0.25s;
@@ -24,11 +23,12 @@
 .hamburger_top,
 .hamburger_middle,
 .hamburger_bottom {
+  border-radius: 100px;
   position: absolute;
   top: 0;
   left: 0;
-  width: 48px;
-  height: 4px;
+  width: 36px;
+  height: 3px;
   background-color: #252422;
   transform: rotate(0);
   -webkit-transform: rotate(0);
@@ -43,19 +43,20 @@
 }
 
 .hamburger_middle {
-  transform: translateY(14px);
-  -webkit-transform: translateY(14px);
-  -moz-transform: translateY(14px);
-  -ms-transform: translateY(14px);
-  -o-transform: translateY(14px);
+  transform: translateY(10px);
+  -webkit-transform: translateY(10px);
+  -moz-transform: translateY(10px);
+  -ms-transform: translateY(10px);
+  -o-transform: translateY(10px);
+  background-color: #eb5e28;
 }
 
 .hamburger_bottom {
-  transform: translateY(28px);
-  -webkit-transform: translateY(28px);
-  -moz-transform: translateY(28px);
-  -ms-transform: translateY(28px);
-  -o-transform: translateY(28px);
+  transform: translateY(21px);
+  -webkit-transform: translateY(21px);
+  -moz-transform: translateY(21px);
+  -ms-transform: translateY(21px);
+  -o-transform: translateY(21px);
 }
 
 .open {
@@ -67,11 +68,11 @@
 }
 
 .open .hamburger_top {
-  transform: rotate(45deg) translateY(12px) translate(12px);
-  -webkit-transform: rotate(45deg) translateY(12px) translate(12px);
-  -moz-transform: rotate(45deg) translateY(12px) translate(12px);
-  -ms-transform: rotate(45deg) translateY(12px) translate(12px);
-  -o-transform: rotate(45deg) translateY(12px) translate(12px);
+  transform: rotate(45deg) translateY(9px) translate(9px);
+  -webkit-transform: rotate(45deg) translateY(9px) translate(9px);
+  -moz-transform: rotate(45deg) translateY(9px) translate(9px);
+  -ms-transform: rotate(45deg) translateY(9px) translate(9px);
+  -o-transform: rotate(45deg) translateY(9px) translate(9px);
 }
 
 .open .hamburger_middle {
@@ -79,11 +80,11 @@
 }
 
 .open .hamburger_bottom {
-  transform: rotate(-45deg) translateY(12px) translate(-12px);
-  -webkit-transform: rotate(-45deg) translateY(12px) translate(-12px);
-  -moz-transform: rotate(-45deg) translateY(12px) translate(-12px);
-  -ms-transform: rotate(-45deg) translateY(12px) translate(-12px);
-  -o-transform: rotate(-45deg) translateY(12px) translate(-12px);
+  transform: rotate(-45deg) translateY(9px) translate(-9px);
+  -webkit-transform: rotate(-45deg) translateY(9px) translate(-9px);
+  -moz-transform: rotate(-45deg) translateY(9px) translate(-9px);
+  -ms-transform: rotate(-45deg) translateY(9px) translate(-9px);
+  -o-transform: rotate(-45deg) translateY(9px) translate(-9px);
 }
 .container__video {
   width: 100%;
