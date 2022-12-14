@@ -34,6 +34,10 @@ module.exports = {
           "0%, 100%": { transform: "rotate(-3deg)" },
           "50%": { transform: "rotate(3deg)" },
         },
+        fade: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "100" },
+        },
         point: {
           "0%, 100%": { transform: "translate(-3px)" },
           "50%": { transform: "translate(3px)" },
