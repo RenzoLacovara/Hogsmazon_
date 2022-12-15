@@ -8,7 +8,7 @@ const Item = ({ nombre, imagen, precio, tienda, id, oferta, descuento }) => {
       to={"/Item/" + id}
       className="transform hover:-translate-y-4 duration-150 flex justify-center"
     >
-      <article className="overflow-hidden sm:my-8 w-72 rounded-2xl shadow-lg sm:h-96 h-40 flex flex-col items-center justify-between">
+      <article className="overflow-hidden sm:my-8 w-78 rounded-2xl shadow-lg sm:h-96 h-40 flex flex-col items-center justify-between">
         <div className="w-full flex sm:flex-col">
           <div className="sm:w-full w-1/3 bg-mapa">
             <img

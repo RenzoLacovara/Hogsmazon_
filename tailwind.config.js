@@ -26,6 +26,9 @@ module.exports = {
         136: "50rem",
         142: "55rem",
       },
+      width: {
+        78: "19rem",
+      },
       backgroundImage: {
         mapa: "url('../public/imagenes/mapa.jpg')",
         mapa2: "url('../public/imagenes/mapa2.png')",
