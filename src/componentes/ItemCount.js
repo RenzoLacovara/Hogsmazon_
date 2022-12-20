@@ -34,7 +34,9 @@ const ItemCount = ({ handleOnAdd, confirmar, handleClick, init }) => {
         <button onClick={restar}>
           <img
             className={`sm:w-16 sm:h-10 h-7  ${
-              resCount ? "hover:animate-point" : "filter grayscale"
+              resCount
+                ? "hover:animate-point"
+                : "filter grayscale cursor-default"
             }`}
             src="../imagenes/izquierda.png"
             alt="menos"
@@ -46,7 +48,9 @@ const ItemCount = ({ handleOnAdd, confirmar, handleClick, init }) => {
         <button onClick={sumar}>
           <img
             className={`sm:w-16 sm:h-10 h-7  ${
-              sumCount ? "hover:animate-point" : "filter grayscale"
+              sumCount
+                ? "hover:animate-point"
+                : "filter grayscale cursor-default"
             }`}
             src="../imagenes/derecha.png"
             alt="mas"
