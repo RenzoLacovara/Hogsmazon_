@@ -6,19 +6,17 @@ import { Link } from "react-router-dom";
 
 const ItemDetail = ({ detalle }) => {
   const { agregarProducto } = useCarrito();
-
   const [detalles, setDetalles] = useState({});
+  const [total, setTotal] = useState(0);
+  const [confirmar, setConfirmar] = useState(false);
+
   useEffect(() => {
     setDetalles(detalle);
   }, [detalle]);
-  const [total, setTotal] = useState(0);
-  const [confirmar, setConfirmar] = useState(false);
   const handleOnAdd = (cantidad) => {
     setConfirmar(true);
+    agregarProducto(detalle, cantidad);
     setTotal(cantidad);
-  };
-  const handleClick = () => {
-    agregarProducto(detalle, total);
   };
 
   let ofe = detalles.precio - detalles.precio * detalles.descuento;
@@ -79,7 +77,6 @@ const ItemDetail = ({ detalle }) => {
             <ItemCount
               handleOnAdd={handleOnAdd}
               confirmar={confirmar}
-              handleClick={handleClick}
               init={total}
             />
           </div>

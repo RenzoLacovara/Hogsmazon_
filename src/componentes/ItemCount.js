@@ -1,16 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const ItemCount = ({ handleOnAdd, confirmar, handleClick, init }) => {
-  const [count, setCount] = useState(init);
-
+  const [count, setCount] = useState(1);
+  const [sumCount, setSumCount] = useState(false);
+  const [resCount, setResCount] = useState(false);
+  useEffect(() => {
+    if (count < 20) {
+      setSumCount(true);
+    } else {
+      setSumCount(false);
+    }
+    if (count > 1) {
+      setResCount(true);
+    } else {
+      setResCount(false);
+    }
+  }, [count]);
   const sumar = () => {
-    setCount(count + 1);
+    if (sumCount) {
+      setCount(count + 1);
+    }
   };
   const restar = () => {
-    setCount(count - 1);
-  };
-  const confirm = () => {
-    handleOnAdd(count);
+    if (count > 1) {
+      setCount(count - 1);
+    }
   };
 
   return (
@@ -18,7 +33,9 @@ const ItemCount = ({ handleOnAdd, confirmar, handleClick, init }) => {
       <div className="flex">
         <button onClick={restar}>
           <img
-            className="sm:w-16 sm:h-10 h-7 hover:animate-point"
+            className={`sm:w-16 sm:h-10 h-7  ${
+              resCount ? "hover:animate-point" : "filter grayscale"
+            }`}
             src="../imagenes/izquierda.png"
             alt="menos"
           ></img>
@@ -28,7 +45,9 @@ const ItemCount = ({ handleOnAdd, confirmar, handleClick, init }) => {
         </div>
         <button onClick={sumar}>
           <img
-            className="sm:w-16 sm:h-10 h-7 hover:animate-point"
+            className={`sm:w-16 sm:h-10 h-7  ${
+              sumCount ? "hover:animate-point" : "filter grayscale"
+            }`}
             src="../imagenes/derecha.png"
             alt="mas"
           ></img>
@@ -39,17 +58,20 @@ const ItemCount = ({ handleOnAdd, confirmar, handleClick, init }) => {
           {confirmar === false || count !== init ? (
             <button
               className="bg-detalle4 px-3 py-1 rounded-full hover:bg-detalle text-princ mb-2"
-              onClick={confirm}
+              onClick={() => {
+                handleOnAdd(count);
+              }}
             >
               Accio!
             </button>
           ) : (
-            <button
-              className=" w-36 bg-detalle4 px-2 py-1 rounded-full hover:bg-detalle text-princ mb-2"
+            <Link
+              to="/Cart"
+              className=" w-36 bg-detalle4 px-2 text-center py-1 rounded-full hover:bg-detalle text-princ mb-2"
               onClick={handleClick}
             >
-              Add to Cauldron
-            </button>
+              Go to Cauldron
+            </Link>
           )}
         </div>
       </div>

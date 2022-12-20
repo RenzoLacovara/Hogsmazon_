@@ -49,7 +49,7 @@ function Header(prop) {
         <div className="md:hidden w-full flex justify-end">
           <div
             id="menu"
-            className={`pl-10 pr-6 pt-4 pb-10 bg-secundario rounded-l-full rounded-tl-none z-10 flex-col items-end space-y-4 sm:w-auto sm:self-center drop-shadow-md transform transition-all duration-500 ease-in-out ${
+            className={`pl-10 pr-6 pt-4 pb-10 bg-secundario rounded-l-full rounded-tl-none z-10 flex-col sm:hidden items-end space-y-4 sm:w-auto sm:self-center drop-shadow-md transform transition-all duration-500 ease-in-out ${
               hamb
                 ? "flex -translate-y-0 opacity-100"
                 : "-translate-y-80 opacity-0"
