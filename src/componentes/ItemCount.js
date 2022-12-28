@@ -6,7 +6,7 @@ const ItemCount = ({ handleOnAdd, confirmar, handleClick, init }) => {
   const [sumCount, setSumCount] = useState(false);
   const [resCount, setResCount] = useState(false);
   useEffect(() => {
-    if (count < 20) {
+    if (count < 10) {
       setSumCount(true);
     } else {
       setSumCount(false);

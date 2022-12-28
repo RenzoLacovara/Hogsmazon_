@@ -73,15 +73,23 @@ const CustomProvider = ({ children }) => {
   const sumarProducto = (id) => {
     let sum = cart.findIndex((producto) => producto.id === id);
     let cartActualizado = [...cart];
-    cartActualizado[sum].cantidad = cartActualizado[sum].cantidad + 1;
-    setCart(cartActualizado);
+    if (cartActualizado[sum].cantidad < 10) {
+      cartActualizado[sum].cantidad = cartActualizado[sum].cantidad + 1;
+      setCart(cartActualizado);
+    } else {
+      return null;
+    }
   };
 
   const restarProducto = (id) => {
     let sum = cart.findIndex((producto) => producto.id === id);
     let cartActualizado = [...cart];
-    cartActualizado[sum].cantidad = cartActualizado[sum].cantidad - 1;
-    setCart(cartActualizado);
+    if (cartActualizado[sum].cantidad > 1) {
+      cartActualizado[sum].cantidad = cartActualizado[sum].cantidad - 1;
+      setCart(cartActualizado);
+    } else {
+      return null;
+    }
   };
 
   const contextValue = {

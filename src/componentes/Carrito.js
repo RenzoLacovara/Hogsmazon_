@@ -26,7 +26,11 @@ const Carrito = (productos) => {
             <h1 className=" font-semibold">Quantity</h1>
             <div className="flex justify-center gap-2">
               <button
-                className="hover:text-detalle"
+                className={`${
+                  productos.cantidad > 1
+                    ? "hover:text-detalle"
+                    : "hover:text-secundariod cursor-default"
+                }`}
                 onClick={() => restarProducto(productos.id)}
               >
                 {" "}
@@ -34,7 +38,11 @@ const Carrito = (productos) => {
               </button>
               <h1>{productos.cantidad}u</h1>
               <button
-                className="hover:text-detalle"
+                className={`${
+                  productos.cantidad < 10
+                    ? "hover:text-detalle"
+                    : "hover:text-secundariod cursor-default"
+                }`}
                 onClick={() => sumarProducto(productos.id)}
               >
                 {" "}
