@@ -5,7 +5,7 @@ let fecha = new Date().getFullYear();
 
 const Footer = () => {
   return (
-    <footer class="flex flex-wrap justify-center md:justify-between bg-secundario text-base-content w-full h-96 text-center sm:text-left md:h-80">
+    <footer class="flex flex-wrap justify-center md:justify-between bg-secundario text-base-content w-full h-100 text-center sm:text-left md:h-80">
       <div className="px-3 pt-10 md:p-10">
         <p>
           <span className="font-bold">Hogsmazon</span> © {fecha} - All rights
@@ -15,6 +15,17 @@ const Footer = () => {
             I Solemnly Swear That I Am Up To No Good
           </span>
         </p>
+        <div className="flex justify-center gap-3 mt-2">
+          <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
+            <i class="fa-brands fa-facebook text-xl hover:text-detalle"></i>
+          </a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
+            <i class="fa-brands fa-instagram font-extrabold text-xl hover:text-detalle"></i>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noreferrer">
+            <i class="fa-brands fa-twitter text-xl hover:text-detalle"></i>
+          </a>
+        </div>
       </div>
       <div className="flex flex-wrap justify-evenly bg-secundario px-3 sm:pt-10">
         <div className="flex flex-col w-2/4">
