@@ -15,11 +15,10 @@ const Carrito = () => {
   };
   useEffect(() => {
     setCart(contextValue);
+    setConfirm(false);
   }, [contextValue]);
 
-  return confirm === true ? (
-    <Form />
-  ) : cart.productos.length === 0 ? (
+  return cart.productos.length === 0 ? (
     <div>
       <div className="p-4 text-xl flex flex-col justify-center mt-3 text-center">
         <Snitch />
@@ -32,7 +31,7 @@ const Carrito = () => {
       </div>
     </div>
   ) : (
-    <div className="w-full">
+    <div className="w-full mb-8 mt-8">
       <CarritoList cart={cart} />
       <div>
         <section className="w-full"></section>
@@ -69,6 +68,7 @@ const Carrito = () => {
           </div>
         </div>
       </div>
+      {confirm === true ? <Form /> : null}
     </div>
   );
 };
