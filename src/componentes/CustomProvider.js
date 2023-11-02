@@ -36,16 +36,7 @@ const CustomProvider = ({ children }) => {
     })
     return res
   }
-  const addToCart = (item) => {
-    const index = cart.findIndex((i) => i.id === item.id)
-    if (index > -1) {
-      const oldItem = cart[index].cantidad
-      cart.splice(index, 1)
-      setCart([...cart, { ...item, cantidad: item.cantidad + oldItem }])
-    } else {
-      setCart([...cart, item])
-    }
-  }
+
   const agregarProducto = (productoNuevo, cantidad) => {
     if (!isInCart(productoNuevo.id)) {
       productoNuevo.cantidad = cantidad

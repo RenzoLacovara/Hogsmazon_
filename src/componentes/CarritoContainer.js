@@ -8,6 +8,7 @@ import Form from './Form'
 
 const Carrito = () => {
   const contextValue = useCarrito()
+
   const [cart, setCart] = useState(contextValue)
   const [confirm, setConfirm] = useState(false)
 
@@ -16,10 +17,10 @@ const Carrito = () => {
   }
   useEffect(() => {
     setCart(contextValue)
-    setConfirm(false)
+    // setConfirm(false)
   }, [contextValue])
 
-  return cart.productos.length === 0 ? (
+  return cart.productos.length === 0 && !confirm ? (
     <div>
       <div className="flex flex-col justify-center p-4 mt-3 text-xl text-center">
         <Snitch />
@@ -34,9 +35,7 @@ const Carrito = () => {
   ) : (
     <div className="w-full mt-8 mb-8">
       <CarritoList cart={cart} />
-      <div>
-        <section className="w-full"></section>
-
+      <div className={`inline ${confirm ? 'hidden' : null}`}>
         <div className="flex justify-between w-5/6 h-full m-auto lg:w-2/4 ">
           <div className="">
             <button
@@ -47,11 +46,6 @@ const Carrito = () => {
             </button>
           </div>
           <div>
-            <h1 className="text-xl font-semibold text-right">
-              Total:{' '}
-              <span className="font-normal ">${contextValue.precioTotal}</span>
-            </h1>
-
             <div className="flex flex-col items-end w-full">
               <h2 className="">0% interest with</h2>
               <img

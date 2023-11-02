@@ -33,9 +33,14 @@ const Orders = () => {
         placeholder="Introduce el código"
         value={codigo}
         onChange={(e) => setCodigo(e.target.value)}
-        className="my-20"
+        className="p-1 my-32 text-center rounded-tl-full rounded-bl-full S bg-secundario"
       />
-      <button onClick={buscarOrden}>Buscar</button>
+      <button
+        className="px-3 py-1 mb-2 rounded-tr-full rounded-br-full bg-detalle4 hover:bg-detalle text-princ"
+        onClick={buscarOrden}
+      >
+        Buscar
+      </button>
       {resultado.length > 0 ? (
         <div>
           {resultado.map((orden, index) => (

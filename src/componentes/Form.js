@@ -48,6 +48,7 @@ const Form = ({ id }) => {
       .then((res) => {
         setId(orden.orden)
         console.log(orden.orden)
+        vaciarCart()
       })
       .then((error) => {
         console.log(error)
