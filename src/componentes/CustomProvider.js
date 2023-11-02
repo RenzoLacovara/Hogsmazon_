@@ -1,96 +1,105 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from 'react'
 
-export const contexto = createContext();
-const { Provider } = contexto;
+export const contexto = createContext()
+const { Provider } = contexto
 export const useCarrito = () => {
-  return useContext(contexto);
-};
+  return useContext(contexto)
+}
 
 const CustomProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
-  const [total, setTotal] = useState(0);
-  const [precioTotal, setPrecioTotal] = useState(0);
+  const [cart, setCart] = useState([])
+  const [total, setTotal] = useState(0)
+  const [precioTotal, setPrecioTotal] = useState(0)
 
   useEffect(() => {
-    const totalCant = getCantidad();
-    setTotal(totalCant);
-  }, [cart]);
+    const totalCant = getCantidad()
+    setTotal(totalCant)
+  }, [cart])
 
   useEffect(() => {
-    const totalPre = getPrecio();
-    setPrecioTotal(totalPre);
-  }, [cart]);
+    const totalPre = getPrecio()
+    setPrecioTotal(totalPre)
+  }, [cart])
 
   const getCantidad = () => {
-    let res = 0;
+    let res = 0
     cart.forEach((producto) => {
-      res += producto.cantidad;
-    });
-    return res;
-  };
+      res += producto.cantidad
+    })
+    return res
+  }
 
   const getPrecio = () => {
-    let res = 0;
+    let res = 0
     cart.forEach((producto) => {
-      res += producto.cantidad * producto.precio;
-    });
-    return res;
-  };
-
+      res += producto.cantidad * producto.precio
+    })
+    return res
+  }
+  const addToCart = (item) => {
+    const index = cart.findIndex((i) => i.id === item.id)
+    if (index > -1) {
+      const oldItem = cart[index].cantidad
+      cart.splice(index, 1)
+      setCart([...cart, { ...item, cantidad: item.cantidad + oldItem }])
+    } else {
+      setCart([...cart, item])
+    }
+  }
   const agregarProducto = (productoNuevo, cantidad) => {
     if (!isInCart(productoNuevo.id)) {
-      productoNuevo.cantidad = cantidad;
-      setCart([...cart, productoNuevo]);
+      productoNuevo.cantidad = cantidad
+      setCart([...cart, productoNuevo])
     } else {
       const cartActualizado = cart.map((producto) => {
         if (producto.id === productoNuevo.id) {
           const productoActualizado = {
             ...producto,
             cantidad: cantidad,
-          };
-          return productoActualizado;
+          }
+          return productoActualizado
         } else {
-          return producto;
+          return producto
         }
-      });
-      setCart(cartActualizado);
+      })
+      setCart([cartActualizado])
     }
-  };
+  }
 
   const removeItem = (id) => {
-    const cartActualizado = cart.filter((producto) => producto.id !== id);
-    setCart(cartActualizado);
-  };
+    const cartActualizado = cart.filter((producto) => producto.id !== id)
+    setCart(cartActualizado)
+  }
 
   const vaciarCart = () => {
-    setCart([]);
-  };
+    setCart([])
+  }
 
   const isInCart = (id) => {
-    return cart.some((producto) => producto.id === id);
-  };
+    return cart.some((producto) => producto.id === id)
+  }
 
   const sumarProducto = (id) => {
-    let sum = cart.findIndex((producto) => producto.id === id);
-    let cartActualizado = [...cart];
+    let sum = cart.findIndex((producto) => producto.id === id)
+    let cartActualizado = [...cart]
     if (cartActualizado[sum].cantidad < 10) {
-      cartActualizado[sum].cantidad = cartActualizado[sum].cantidad + 1;
-      setCart(cartActualizado);
+      cartActualizado[sum].cantidad = cartActualizado[sum].cantidad + 1
+      setCart(cartActualizado)
     } else {
-      return null;
+      return null
     }
-  };
+  }
 
   const restarProducto = (id) => {
-    let sum = cart.findIndex((producto) => producto.id === id);
-    let cartActualizado = [...cart];
+    let sum = cart.findIndex((producto) => producto.id === id)
+    let cartActualizado = [...cart]
     if (cartActualizado[sum].cantidad > 1) {
-      cartActualizado[sum].cantidad = cartActualizado[sum].cantidad - 1;
-      setCart(cartActualizado);
+      cartActualizado[sum].cantidad = cartActualizado[sum].cantidad - 1
+      setCart(cartActualizado)
     } else {
-      return null;
+      return null
     }
-  };
+  }
 
   const contextValue = {
     productos: cart,
@@ -103,8 +112,8 @@ const CustomProvider = ({ children }) => {
     agregarProducto: agregarProducto,
     sumarProducto: sumarProducto,
     restarProducto: restarProducto,
-  };
-  return <Provider value={contextValue}>{children}</Provider>;
-};
+  }
+  return <Provider value={contextValue}>{children}</Provider>
+}
 
-export default CustomProvider;
+export default CustomProvider

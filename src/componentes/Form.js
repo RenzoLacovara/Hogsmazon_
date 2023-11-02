@@ -1,92 +1,77 @@
-import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { db } from "./firebase";
-import React, { useState } from "react";
-import { useCarrito } from "./CustomProvider";
-import CarritoList from "./CarritoList";
-import { Link } from "react-router-dom";
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
+import { db } from './firebase'
+import React, { useState } from 'react'
+import { useCarrito } from './CustomProvider'
+import { Link } from 'react-router-dom'
 
-const Form = () => {
-  const { vaciarCart, productos, precioTotal, cantidad } = useCarrito();
-  const [id, setId] = useState("");
-  const [nombre, setNombre] = useState("");
-  const [phone, setPhone] = useState("");
+const Form = ({ id }) => {
+  const { vaciarCart, productos, precioTotal, cantidad } = useCarrito()
+  const [orderId, setId] = useState('')
+  const [nombre, setNombre] = useState('')
+  const [phone, setPhone] = useState('')
+  console.log(productos)
 
   const handleName = (e) => {
-    setNombre(e.target.value);
-  };
+    setNombre(e.target.value)
+  }
   const handlePhone = (e) => {
-    setPhone(e.target.value);
-  };
+    setPhone(e.target.value)
+  }
+  function generarNumeroRandom() {
+    let digitos = Array.from({ length: 10 }, (_, i) => i)
+    let numeroRandom = ''
+    for (let i = 0; i < 6; i++) {
+      const randomIndex = Math.floor(Math.random() * digitos.length)
+      const digito = digitos.splice(randomIndex, 1)[0]
+      numeroRandom += digito.toString()
+    }
+    return parseInt(numeroRandom)
+  }
+
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
+    console.log(productos)
     const orden = {
+      orden: generarNumeroRandom(),
       buyer: {
-        name: nombre,
-        phone: phone,
+        name: `${nombre}`,
+        phone: `${phone}`,
       },
-      products: productos,
+      cart: productos,
       total: cantidad,
       valorTotal: precioTotal,
       fecha: serverTimestamp(),
-    };
-
-    const ordersCollection = collection(db, "ordenes");
-    const consulta = addDoc(ordersCollection, orden);
-
+    }
+    const ordersCollection = collection(db, 'ordenes')
+    const consulta = addDoc(ordersCollection, orden)
     consulta
-      .then((docRef) => {
-        setId(docRef.id);
+      .then((res) => {
+        setId(orden.orden)
+        console.log(orden.orden)
       })
       .then((error) => {
-        console.log(error);
-      });
-  };
+        console.log(error)
+      })
+  }
+
   return (
-    <div className="w-3/4 sm:w-2/4 m-auto text-center my-20">
-      <form onSubmit={handleSubmit}>
-        <h1 className="my-4">
-          To finalize your purchase order, please enter the following
-          information
-        </h1>
-        <div>
-          <h1 className="font-semibold">Enter your full name</h1>
-          <input
-            className="bg-secundario"
-            type="text"
-            onChange={handleName}
-            value={nombre}
-          />
-        </div>
-        <div>
-          <h1 className="font-semibold">An a contact number</h1>
-          <input
-            className="bg-secundario"
-            type="number"
-            onChange={handlePhone}
-            value={phone}
-          />
-        </div>
-        <button
-          onClick={vaciarCart}
-          className="bg-detalle4 px-3 py-1 rounded-full md:hover:bg-detalle focus:bg-detalle text-princ my-2"
-        >
-          Submit
-        </button>
-      </form>
-      {id ? (
+    <div className="w-3/4 m-auto my-20 text-center sm:w-2/4">
+      {orderId ? (
         <div>
           <h1 className="mb-10">
-            Just like magic! Order generated successfully, your purchase code is{" "}
-            <span className="font-semibold text-detalle text-center">{id}</span>
+            Just like magic! Order generated successfully, your purchase code is
+            <span className="ml-2 font-semibold text-center text-detalle">
+              {orderId}
+            </span>
           </h1>
-          <div className="flex flex-col justify-center items-center">
-            <h1 className="w-full flex justify-center items-center">
+          <div className="flex flex-col items-center justify-center">
+            <h1 className="flex items-center justify-center w-full">
               But the Remembrall
             </h1>
             <img
               src="../../imagenes/logo1.png"
               alt="logo"
-              className="h-8 w-8 mx-2  filter drop-shadow-xl animate-wiggle"
+              className="w-8 h-8 mx-2 filter drop-shadow-xl animate-wiggle"
             />
             <h1>its turning red</h1>
 
@@ -95,9 +80,37 @@ const Form = () => {
             </Link>
           </div>
         </div>
-      ) : null}
+      ) : (
+        <form onSubmit={handleSubmit}>
+          <h1 className="my-4">
+            To finalize your purchase order, please enter the following
+            information
+          </h1>
+          <div>
+            <h1 className="font-semibold">Enter your full name</h1>
+            <input
+              className="bg-secundario"
+              type="text"
+              onChange={handleName}
+              value={nombre}
+            />
+          </div>
+          <div>
+            <h1 className="font-semibold">An a contact number</h1>
+            <input
+              className="bg-secundario"
+              type="number"
+              onChange={handlePhone}
+              value={phone}
+            />
+          </div>
+          <button className="px-3 py-1 my-2 rounded-full bg-detalle4 md:hover:bg-detalle focus:bg-detalle text-princ">
+            Submit
+          </button>
+        </form>
+      )}
     </div>
-  );
-};
+  )
+}
 
-export default Form;
+export default Form
